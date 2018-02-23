@@ -15,13 +15,13 @@ class CreateParamsTable extends Migration
     {
         Schema::create('params', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('speed');
-            $table->integer('accel');
+            $table->float('speed');
+            $table->float('accel');
             $table->integer('sudden_break');
             $table->integer('forward_collision');
             $table->integer('lane_departure');
-            $table->bigInteger('lat');
-            $table->bigInteger('lon');
+            $table->decimal('lat',20,14);
+            $table->decimal('lon',20,14);
             $table->date('send_date');
             $table->timestamps();
         });
